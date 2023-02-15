@@ -60,7 +60,7 @@ footer p {
   border: none;
   font-family: "McLaren";
   font-size: large;
-  /* background-color: #cfcfcf; */
+  width: 200px;
 }
 
 .btn-add {
@@ -89,4 +89,12 @@ footer p {
   margin-bottom: 10px;
   white-space: pre-wrap;
   word-wrap: break-word;
+}
+
+.delete-note {
+  background-color: #fff;
+  border: none;
+  color: #f5ba13;
+  margin-left: 80%;
+  cursor: pointer;
 }
