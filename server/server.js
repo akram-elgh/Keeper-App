@@ -19,14 +19,9 @@ const NoteSchema = new mongoose.Schema({
 
 const Note = mongoose.model("Note", NoteSchema);
 
-const note = new Note({
-  title: "Day one",
-  body: "Hello world!",
-});
-
 app.route("/api").get((req, res) => {
   Note.find((err, data) => {
-    res.json(data);
+    res.json(data || []);
   });
 });
 
