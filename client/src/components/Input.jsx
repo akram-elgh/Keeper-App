@@ -11,7 +11,7 @@ function Input(props) {
   const [isClicked, setClicked] = useState(false);
   const { title, body } = fullInput;
   function handleClick() {
-    setClicked(!isClicked);
+    setClicked(true);
   }
   function handleChange(event) {
     const value = event.target.value;

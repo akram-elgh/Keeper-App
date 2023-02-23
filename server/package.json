@@ -1,0 +1,26 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Backend for Keeper app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akram-elgh/Keeper-App.git"
+  },
+  "author": "akram-elgh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akram-elgh/Keeper-App/issues"
+  },
+  "homepage": "https://github.com/akram-elgh/Keeper-App#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mongoose": "^6.10.0"
+  }
+}
