@@ -5,23 +5,24 @@ import Footer from "./Footer";
 // import notes from "../notes";
 import Input from "./Input";
 function App() {
+  const url = "http://localhost:3001/api";
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/api")
+    fetch(url)
       .then((response) => response.json())
       .then((data) => setNotes(data));
   }, []);
 
   function addNote(newNote) {
-    fetch("http://localhost:3001/api", {
+    fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(newNote),
     }).then(() => {
-      fetch("http://localhost:3001/api")
+      fetch(url)
         .then((response) => response.json())
         .then((data) => setNotes(data));
     });
@@ -30,10 +31,10 @@ function App() {
     // });
   }
   function deleteNote(id) {
-    fetch(`http://localhost:3001/api?id=${id}`, {
+    fetch(`${url}?id=${id}`, {
       method: "DELETE",
     }).then(() => {
-      fetch("http://localhost:3001/api")
+      fetch(url)
         .then((response) => response.json())
         .then((data) => setNotes(data));
     });

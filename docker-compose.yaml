@@ -1,0 +1,33 @@
+version: "3"
+services:
+  keeper-app:
+    image: keeper-app
+    stdin_open: true
+    ports:
+      - "3000:3000"
+    networks:
+      - mern-app
+  keeper-api:
+    image: keeper-api
+    ports:
+      - "3001:3001"
+    networks:
+      - mern-app
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    networks:
+      - mern-app
+    volumes:
+      - type: volume
+        source: mongo-data
+        target: /data/db
+networks:
+  mern-app:
+    driver: bridge
+volumes:
+  mongo-data:
+    driver: local

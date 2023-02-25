@@ -8,7 +8,7 @@ app.use(cors({ origin: "http://localhost:3000" }));
 app.use(bodyParser.json());
 mongoose.set("strictQuery", false);
 // Connecting to mongodb databse at port 27017
-mongoose.connect("mongodb://localhost:27017/notesDB", (err) => {
+mongoose.connect("mongodb://mongo:27017/notesDB", (err) => {
   console.log(err || "Connected to database");
 });
 
@@ -41,7 +41,6 @@ app
   })
   .delete((req, res) => {
     Note.findByIdAndDelete(req.query.id, (err, data) => {
-      console.log(data);
       res.sendStatus(200);
     });
   });
